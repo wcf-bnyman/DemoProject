@@ -3,6 +3,8 @@
   integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
   crossorigin="anonymous"></script>
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script type="text/javascript">
     function FeatureViewModel() {
         var self = this;
@@ -28,33 +30,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Feature Request</title>
-    <h2>Feature Request</h2>
+    <title>Request New Feature</title>
+    <h2>Request New Feature</h2>
     <a href="feature_requests">View Feature Requests</a>
 </head>
 <body>
     <form action="/submit_request" method="post">
-        <table>
+        <table class="table">
             <tr>
-                <td>Title:</td><td><input type="text" name="title"></td>
+                <td>Title:</td><td><input class="form-control" type="text" name="title"></td>
             </tr>
             <tr>
-                <td>Description:</td><td><input type="text" name="description"></td>
+                <td>Description:</td><td><textarea name="description" class="form-control" rows="3"></textarea></td>
             </tr>
             <tr>
-                <td>Client:</td><td><select name="client"><option value="Client A">Client A</option><option value="Client B">Client B</option><option value="Client C">Client C</option></select></td>
+                <td>Client:</td><td><select class="form-control" name="client"><option value="Client A">Client A</option><option value="Client B">Client B</option><option value="Client C">Client C</option></select></td>
             </tr>
             <tr>
-                <td>Client Priority:</td><td><input type="number" name="client_priority"></td>
+                <td>Client Priority:</td><td><input class="form-control" type="number" name="client_priority"></td>
             </tr>
             <tr>
-                <td>Target Date:</td><td><input type="date" name="target_date"></td>
+                <td>Target Date:</td><td><input class="form-control" type="date" name="target_date"></td>
             </tr>
             <tr>
-                <td>Product Areas</td><td><select name="productArea"><option value="Billing">Billing</option><option value="Claims">Claims</option><option value="Reports">Reports</option><option value="Policies">Policies</option></select></td>
+                <td>Product Areas</td><td><select class="form-control" name="productArea"><option value="Billing">Billing</option><option value="Claims">Claims</option><option value="Reports">Reports</option><option value="Policies">Policies</option></select></td>
             </tr>
         </table>
-         <button type="submit">Submit</button>
+        <button type="submit" >Submit</button>
     </form>
 </body>
 </html>
