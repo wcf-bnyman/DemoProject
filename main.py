@@ -1,7 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from flask import Blueprint, render_template, session, redirect, url_for, \
-     request, flash, g, jsonify, abort, Flask
+from flask import render_template, request, Flask, redirect
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
@@ -26,6 +25,12 @@ def root():
     return render_template('index.html')
 
 
+@app.route("/feature_requests")
+def show_requests():
+    features = Feature.query.all()
+    return render_template('feature_requests.html', result=features)
+
+
 @app.route("/submit_request", methods=['POST',])
 def submit_request():
     data = request.form
@@ -38,4 +43,4 @@ def submit_request():
                           product_area=data['productArea'])
     db.session.add(new_feature)
     db.session.commit()
-    return render_template('index.html')
+    return redirect("/")

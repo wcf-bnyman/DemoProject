@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Feature Requests</title>
+    <h2>Feature Requests</h2>
+    <a href="/">Request New Feature</a>
+</head>
+<body>
+
+<table border=1>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Client</th>
+        <th>Client Priority</th>
+        <th>Target Date</th>
+        <th>Product Area</th>
+    </tr>
+    {% for feature in result %}
+        <tr>
+            <td> {{ feature.title }} </td>
+            <td> {{ feature.description }} </td>
+            <td> {{ feature.client }} </td>
+            <td> {{ feature.client_priority }} </td>
+            <td> {{ feature.target_date }} </td>
+            <td> {{ feature.product_area }} </td>
+        </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
