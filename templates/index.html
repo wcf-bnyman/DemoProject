@@ -1,0 +1,58 @@
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
+<script type="text/javascript">
+    function FeatureViewModel() {
+        var self = this;
+        self.clients = [
+            {name: "Client A", value:"Client A"},
+            {name: "Client B", value:"Client B"},
+            {name: "Client C", value:"Client C"}
+        ];
+        self.products = [
+            {productName: "Billing", value:"Billing"},
+            {productName: "Claims", value:"Claims"},
+            {productName: "Reports", value:"Reports"},
+            {productName: "Policies", value:"Policies"}
+        ];
+
+    }
+    $(function(){
+        ko.applyBindings(new FeatureViewModel());
+    });
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feature Request</title>
+</head>
+<body>
+    <form action="/submit_request" method="post">
+        <table>
+            <tr>
+                <td>Title:</td><td><input type="text" name="title"></td>
+            </tr>
+            <tr>
+                <td>Description:</td><td><input type="text" name="description"></td>
+            </tr>
+            <tr>
+                <td>Client:</td><td><select name="client"><option value="Client A">Client A</option><option value="Client B">Client B</option><option value="Client C">Client C</option></select></td>
+            </tr>
+            <tr>
+                <td>Client Priority:</td><td><input type="number" name="client_priority"></td>
+            </tr>
+            <tr>
+                <td>Target Date:</td><td><input type="date" name="target_date"></td>
+            </tr>
+            <tr>
+                <td>Product Areas</td><td><select name="productArea"><option value="Billing">Billing</option><option value="Claims">Claims</option><option value="Reports">Reports</option><option value="Policies">Policies</option></select></td>
+            </tr>
+        </table>
+         <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
